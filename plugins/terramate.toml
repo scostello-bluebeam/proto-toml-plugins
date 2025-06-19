@@ -1,0 +1,56 @@
+name = "Terramate"
+type = "cli"
+
+[platform]
+[platform.linux]
+archive-prefix = "terramate_{version}_linux_{arch}"
+exe-path = "terramate"
+checksum-file = "checksums.txt"
+download-file = "terramate_{version}_linux_{arch}.tar.gz"
+
+[platform.macos]
+archive-prefix = "terramate_{version}_darwin_{arch}"
+exe-path = "terramate"
+checksum-file = "checksums.txt"
+download-file = "terramate_{version}_darwin_{arch}.tar.gz"
+
+[platform.windows]
+archive-prefix = "terramate_{version}_windows_{arch}"
+exe-path = "terramate.exe"
+checksum-file = "checksums.txt"
+download-file = "terramate_{version}_windows_{arch}.tar.gz"
+
+[install]
+download-url = "https://github.com/terramate-io/terramate/releases/download/v{version}/{download_file}"
+checksum-url = "https://github.com/terramate-io/terramate/releases/download/v{version}/{checksum_file}"
+
+[install.arch]
+aarch64 = "arm64"
+x86_64 = "amd64"
+
+[install.exes]
+[install.exes.terramate]
+exe-path = "terramate"
+primary = true
+
+[install.exes.terramate-ls]
+exe-path = "terramate-ls"
+no-bin = false
+no-shim = false
+
+[packages]
+globals-lookup-dirs = [
+    "$HOME/.terramate.d/bin",
+    "$HOME/.local/bin"
+]
+
+[resolve]
+git-url = "https://github.com/terramate-io/terramate"
+version-pattern = "^v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?:-(?<pre>[a-zA-Z0-9.-]+))?(?:\\+(?<build>[a-zA-Z0-9.-]+))?"
+
+[detect]
+version-files = [
+    ".terramate-version",
+    ".tm-version",
+    ".tool-versions"
+]
