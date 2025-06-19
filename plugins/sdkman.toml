@@ -1,0 +1,46 @@
+name = "sdkman"
+type = "cli"
+
+[platform]
+[platform.linux]
+archs = ["x86_64", "aarch64", "i686"]
+exe-path = "bin/sdk"
+download-file = "sdkman-{arch}-unknown-linux-gnu.tar.gz"
+
+[platform.macos]
+archs = ["x86_64", "aarch64"]
+exe-path = "bin/sdk"
+download-file = "sdkman-{arch}-apple-darwin.tar.gz"
+
+[platform.windows]
+archs = ["x86_64"]
+exe-path = "bin/sdk.exe"
+download-file = "sdkman-{arch}-pc-windows-msvc.zip"
+
+[install]
+download-url = "https://github.com/sdkman/sdkman-cli-native/releases/download/v{version}/{download_file}"
+
+[install.exes]
+[install.exes.sdk]
+exe-path = "bin/sdk"
+primary = true
+
+[install.exes.sdkman]
+exe-path = "bin/sdk"
+no-bin = true
+
+[resolve]
+git-url = "https://github.com/sdkman/sdkman-cli-native"
+version-pattern = "^v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?:-(?<pre>[\\w\\.]+))?"
+
+[detect]
+version-files = [
+    ".sdkman-version",
+    ".tool-versions"
+]
+
+[packages]
+globals-lookup-dirs = [
+    "$SDKMAN_DIR/candidates/*/current/bin",
+    "$HOME/.sdkman/candidates/*/current/bin"
+]
