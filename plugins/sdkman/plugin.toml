@@ -3,7 +3,7 @@ type = "cli"
 
 [platform]
 [platform.linux]
-archs = ["x86_64", "aarch64", "i686"]
+archs = ["x86_64", "aarch64"]
 exe-path = "bin/sdk"
 download-file = "sdkman-{arch}-unknown-linux-gnu.tar.gz"
 

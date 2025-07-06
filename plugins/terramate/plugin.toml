@@ -3,7 +3,7 @@ type = "cli"
 
 [platform]
 [platform.linux]
-archs = ["x86_64", "aarch64", "i686"]
+archs = ["x86_64", "aarch64"]
 archive-prefix = "terramate_{version}_linux_{arch}"
 exe-path = "terramate"
 checksum-file = "checksums.txt"
@@ -17,7 +17,7 @@ checksum-file = "checksums.txt"
 download-file = "terramate_{version}_darwin_{arch}.tar.gz"
 
 [platform.windows]
-archs = ["x86_64", "aarch64", "i686"]
+archs = ["x86_64", "aarch64"]
 archive-prefix = "terramate_{version}_windows_{arch}"
 exe-path = "terramate.exe"
 checksum-file = "checksums.txt"
@@ -30,7 +30,6 @@ checksum-url = "https://github.com/terramate-io/terramate/releases/download/v{ve
 [install.arch]
 aarch64 = "arm64"
 x86_64 = "amd64"
-i686 = "386"
 
 [install.exes]
 [install.exes.terramate]
