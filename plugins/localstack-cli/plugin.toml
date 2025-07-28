@@ -3,42 +3,38 @@ name = "localstack-cli"
 type = "cli"
 minimum_proto_version = "0.20.0"
 
-[install]
-download_url = "https://github.com/localstack/localstack-cli/releases/download/v{version}/localstack-cli-{version}-{os}-{arch}.tar.gz"
-download_file = "localstack-cli-{version}-{os}-{arch}.tar.gz"
-
 [install.checksums]
-url = "https://github.com/localstack/localstack-cli/releases/download/v{version}/checksums.txt"
+url = "https://github.com/localstack/localstack-cli/releases/download/v{version}/localstack-cli-{version}-checksums.txt"
 public_key = ""
 
 [resolve]
 git_url = "https://github.com/localstack/localstack-cli"
 
 [platform.linux-x64]
-download_url = "https://github.com/localstack/localstack-cli/releases/download/v{version}/localstack-cli-{version}-linux-amd64.tar.gz"
-download_file = "localstack-cli-{version}-linux-amd64.tar.gz"
+download_url = "https://github.com/localstack/localstack-cli/releases/download/v{version}/localstack-cli-{version}-linux-amd64-onefile.tar.gz"
+download_file = "localstack-cli-{version}-linux-amd64-onefile.tar.gz"
 
 [platform.linux-arm64]
-download_url = "https://github.com/localstack/localstack-cli/releases/download/v{version}/localstack-cli-{version}-linux-arm64.tar.gz"
-download_file = "localstack-cli-{version}-linux-arm64.tar.gz"
+download_url = "https://github.com/localstack/localstack-cli/releases/download/v{version}/localstack-cli-{version}-linux-arm64-onefile.tar.gz"
+download_file = "localstack-cli-{version}-linux-arm64-onefile.tar.gz"
 
 [platform.macos-x64]
-download_url = "https://github.com/localstack/localstack-cli/releases/download/v{version}/localstack-cli-{version}-darwin-amd64.tar.gz"
-download_file = "localstack-cli-{version}-darwin-amd64.tar.gz"
+download_url = "https://github.com/localstack/localstack-cli/releases/download/v{version}/localstack-cli-{version}-darwin-amd64-onefile.tar.gz"
+download_file = "localstack-cli-{version}-darwin-amd64-onefile.tar.gz"
 
 [platform.macos-arm64]
-download_url = "https://github.com/localstack/localstack-cli/releases/download/v{version}/localstack-cli-{version}-darwin-arm64.tar.gz"
-download_file = "localstack-cli-{version}-darwin-arm64.tar.gz"
+download_url = "https://github.com/localstack/localstack-cli/releases/download/v{version}/localstack-cli-{version}-darwin-arm64-onefile.tar.gz"
+download_file = "localstack-cli-{version}-darwin-arm64-onefile.tar.gz"
 
 [platform.windows-x64]
-download_url = "https://github.com/localstack/localstack-cli/releases/download/v{version}/localstack-cli-{version}-windows-amd64.zip"
-download_file = "localstack-cli-{version}-windows-amd64.zip"
+download_url = "https://github.com/localstack/localstack-cli/releases/download/v{version}/localstack-cli-{version}-windows-amd64-onefile.exe"
+download_file = "localstack-cli-{version}-windows-amd64-onefile.exe"
 
 [install.unix]
 primary_exe = "./localstack"
 
 [install.windows]
-primary_exe = "./localstack.exe"
+primary_exe = "./localstack-cli-{version}-windows-amd64-onefile.exe"
 
 [metadata]
 description = "LocalStack CLI - A fully functional local AWS cloud stack"
